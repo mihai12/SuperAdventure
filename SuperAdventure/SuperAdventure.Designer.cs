@@ -230,6 +230,7 @@ namespace SuperAdventure
             this.rtbMessages.Size = new System.Drawing.Size(360, 286);
             this.rtbMessages.TabIndex = 18;
             this.rtbMessages.Text = "";
+            this.rtbMessages.TextChanged += new System.EventHandler(this.rtbMessages_TextChanged);
             // 
             // dgvInventory
             // 
@@ -272,12 +273,12 @@ namespace SuperAdventure
             this.pictureBox1.Size = new System.Drawing.Size(679, 209);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // SuperAdventure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1404, 654);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvQuests);
@@ -303,6 +304,7 @@ namespace SuperAdventure
             this.Controls.Add(this.label1);
             this.Name = "SuperAdventure";
             this.Text = "My Game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SuperAdventure_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -316,10 +318,7 @@ namespace SuperAdventure
             //throw new NotImplementedException();
         }
 
-        private void cboWeapons_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //throw new NotImplementedException();
-        }
+        
         
 
         #endregion
