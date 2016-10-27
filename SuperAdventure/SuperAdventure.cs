@@ -456,11 +456,18 @@ namespace SuperAdventure
             UpdatePotionListInUI();
         }
 
+
         //scroll to bottom
         private void ScrollToBottomOfMessages()
         {
             rtbMessages.SelectionStart = rtbMessages.Text.Length;
             rtbMessages.ScrollToCaret();
+        }
+        
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }
