@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections;
 
 using Engine;
 
@@ -97,6 +98,8 @@ namespace SuperAdventure
             _player.OnMessage += DisplayMessage;
 
             _player.MoveTo(_player.CurrentLocation);
+
+            
         }
 
         private void DisplayMessage(object sender, MessageEventArgs messageEventArgs)
@@ -164,9 +167,61 @@ namespace SuperAdventure
                     btnUseWeapon.Visible = _player.Weapons.Any();
                     btnUsePotion.Visible = _player.Potions.Any();
                 }
+
+                updateMap(_player.CurrentLocation);
             }
         }
 
+        private void changeColor(RichTextBox mapname)
+        {
+            mapname.BackColor = System.Drawing.Color.Red;
+        }
+
+        private void updateMap(Location CurrentLocation)
+        {
+            string currentlocation = CurrentLocation.MapName;
+
+            ArrayList map = new ArrayList();
+            map.Add("mapHome");
+            map.Add("mapTownSquare");
+            map.Add("mapAlchemistsHut");
+
+            /*
+            List<string> map = new List<string>();
+            map.Add("mapHome");
+            map.Add("mapTownSquare");
+            map.Add("mapAlchemistsHut");
+            */
+
+            foreach (var loc in map)
+            {
+                changeColor(loc);
+                /*
+                if (currentlocation == loc)
+                {
+                    changeColor(loc);
+                    //loc.BackColor = Color.Red;
+                }
+                else
+                {
+                    //loc.BackColor = Color.White;
+                } 
+                */
+            }
+        }
+        /*
+         //System.Drawing.Color.DarkBlue
+        if (CurrentLocation == World.LocationByID(World.LOCATION_ID_TOWN_SQUARE))
+        {
+            mapTS.BackColor = Color.Red;
+            //mapAH.BackColor = Color.Red;
+        }
+        else
+        {
+            mapTS.BackColor = Color.White;
+        }
+        */
+        
         private void btnNorth_Click(object sender, EventArgs e)
         {
             _player.MoveNorth();

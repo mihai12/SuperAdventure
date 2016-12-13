@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Diagnostics;
 
 namespace Engine
 {
@@ -40,6 +41,7 @@ namespace Engine
 
         public int Level
         {
+            
             get { return ((ExperiencePoints / 100) + 1); }
         }
 
@@ -83,7 +85,7 @@ namespace Engine
             Player player = new Player(10, 10, 20, 0);
             player.Inventory.Add(new InventoryItem(World.ItemByID(World.ITEM_ID_RUSTY_SWORD), 1));
             player.CurrentLocation = World.LocationByID(World.LOCATION_ID_HOME);
-
+            
             return player;
         }
 
@@ -310,8 +312,8 @@ namespace Engine
 
             // Update the player's current location
             CurrentLocation = newLocation;
-
-            // Completely heal the player
+            
+             // Completely heal the player
             CurrentHitPoints = MaximumHitPoints;
 
             // Does the location have a quest?
@@ -404,7 +406,10 @@ namespace Engine
                 _currentMonster = null;
             }
         }
-
+       
+        
+        
+        
         public void UseWeapon(Weapon weapon)
         {
             // Determine the amount of damage to do to the monster

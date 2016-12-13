@@ -54,6 +54,9 @@ namespace SuperAdventure
             this.dgvQuests = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTrade = new System.Windows.Forms.Button();
+            this.mapTownSquare = new System.Windows.Forms.RichTextBox();
+            this.mapAlchemistsHut = new System.Windows.Forms.RichTextBox();
+            this.mapHome = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -231,7 +234,6 @@ namespace SuperAdventure
             this.rtbMessages.Size = new System.Drawing.Size(360, 286);
             this.rtbMessages.TabIndex = 18;
             this.rtbMessages.Text = "";
-            //this.rtbMessages.TextChanged += new System.EventHandler(this.rtbMessages_TextChanged);
             // 
             // dgvInventory
             // 
@@ -265,17 +267,6 @@ namespace SuperAdventure
             this.dgvQuests.RowHeadersVisible = false;
             this.dgvQuests.Size = new System.Drawing.Size(312, 189);
             this.dgvQuests.TabIndex = 20;
-            //
-            // btnTrade
-            //
-            this.btnTrade.Location = new System.Drawing.Point(493, 620);
-            this.btnTrade.Name = "btnTrade";
-            this.btnTrade.Size = new System.Drawing.Size(75, 23);
-            this.btnTrade.TabIndex = 21;
-            this.btnTrade.Text = "Trade";
-            this.btnTrade.UseVisualStyleBackColor = true;
-            this.btnTrade.Click += new System.EventHandler(this.btnTrade_Click);
-
             // 
             // pictureBox1
             // 
@@ -286,12 +277,56 @@ namespace SuperAdventure
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // btnTrade
+            // 
+            this.btnTrade.Location = new System.Drawing.Point(493, 620);
+            this.btnTrade.Name = "btnTrade";
+            this.btnTrade.Size = new System.Drawing.Size(75, 23);
+            this.btnTrade.TabIndex = 21;
+            this.btnTrade.Text = "Trade";
+            this.btnTrade.UseVisualStyleBackColor = true;
+            this.btnTrade.Click += new System.EventHandler(this.btnTrade_Click);
+            // 
+            // mapTownSquare
+            // 
+            this.mapTownSquare.BackColor = System.Drawing.SystemColors.Window;
+            this.mapTownSquare.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mapTownSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mapTownSquare.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.mapTownSquare.Location = new System.Drawing.Point(951, 381);
+            this.mapTownSquare.Name = "mapTownSquare";
+            this.mapTownSquare.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.mapTownSquare.Size = new System.Drawing.Size(75, 75);
+            this.mapTownSquare.TabIndex = 22;
+            this.mapTownSquare.Text = "Town Square";
+            // 
+            // mapAlchemistsHut
+            // 
+            this.mapAlchemistsHut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mapAlchemistsHut.Location = new System.Drawing.Point(951, 283);
+            this.mapAlchemistsHut.Name = "mapAlchemistsHut";
+            this.mapAlchemistsHut.Size = new System.Drawing.Size(75, 75);
+            this.mapAlchemistsHut.TabIndex = 23;
+            this.mapAlchemistsHut.Text = "Alchemy Hut";
+            // 
+            // mapHome
+            // 
+            this.mapHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mapHome.Location = new System.Drawing.Point(951, 478);
+            this.mapHome.Name = "mapHome";
+            this.mapHome.Size = new System.Drawing.Size(75, 75);
+            this.mapHome.TabIndex = 24;
+            this.mapHome.Text = "Home";
+            // 
             // SuperAdventure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1404, 654);
+            this.Controls.Add(this.mapHome);
+            this.Controls.Add(this.mapAlchemistsHut);
+            this.Controls.Add(this.mapTownSquare);
             this.Controls.Add(this.btnTrade);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvQuests);
@@ -359,6 +394,9 @@ namespace SuperAdventure
         private System.Windows.Forms.DataGridView dgvQuests;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTrade;
+        private System.Windows.Forms.RichTextBox mapTownSquare;
+        private System.Windows.Forms.RichTextBox mapAlchemistsHut;
+        private System.Windows.Forms.RichTextBox mapHome;
     }
 }
 
